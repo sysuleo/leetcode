@@ -47,9 +47,9 @@ https://github.com/sysuleo/leetcode/blob/master/leetcode/多维vector的初始�
 class Solution {
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
-        vector<vector<bool>> col(9,vector<bool>(10,false));//初始化一个二维bool型vector
-        vector<vector<bool>> row(9,vector<bool>(10,false));
-        vector<vector<bool>> grid(9,vector<bool>(10,false)); //由于数字是1-9，因此每一维初始化10个false
+        vector<vector<bool>> col(9,vector<bool>(10,false));//第一维指列数，第二位记录数字，未出现为false，出现了则为true
+        vector<vector<bool>> row(9,vector<bool>(10,false));//第一维指行数
+        vector<vector<bool>> grid(9,vector<bool>(10,false)); //每个grid
         for(int i=0;i<9;i++){ //row index
             for(int j=0;j<9;j++){  //col index
                 if(board[i][j]=='.') continue;
@@ -60,7 +60,7 @@ public:
                 if(col[j][num]==false) col[j][num]=true; //num didn't appeared in col 'j',mark it
                 else return false;
                 
-                int gridindex=(i/3)*3+(j/3); //向下取整
+                int gridindex=(i/3)*3+(j/3); //向下取整，得到当前对应的gridindex
                 if(grid[gridindex][num]==false) grid[gridindex][num]=true; //num didn't appeared in grid 'gridindex',mark it
                 else return false;
             }
