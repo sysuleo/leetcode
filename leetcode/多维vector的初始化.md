@@ -23,8 +23,10 @@ using namespace std;
 
 int main()
 {
-    vector<vector<bool>> col(9,(9, vector<bool>(false)));
+    vector<vector<bool>> col(9,vector<bool>(9,false));
     col[0][0] = true;
     return 0;
 }
 ```
+
+一维vector初始化：https://blog.csdn.net/yjunyu/article/details/77728410
