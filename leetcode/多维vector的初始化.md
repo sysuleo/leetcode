@@ -8,6 +8,7 @@ int main()
 {
     vector<vector<bool>> vec;
     vec.resize(10);  //调整容器的长度大小，使其能容纳n个元素。
+    //https://github.com/sysuleo/leetcode/blob/master/leetcode/vector中resize和reserve的区别.md
     for (int i = 0; i < vec.size(); i++) vec[i].resize(10);
     vec[0][0] = 0;
     return 0;
