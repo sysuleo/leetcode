@@ -1,5 +1,5 @@
 #1. 分别进行初始化
-
+```
 #include<vector>
 
 using namespace std;
@@ -12,10 +12,10 @@ int main()
     vec[0][0] = 0;
     return 0;
 }
-
+```
  
 #2. 采用构造函数
-
+```
 #include<vector>
 
 using namespace std;
@@ -26,3 +26,4 @@ int main()
     col[0][0] = true;
     return 0;
 }
+```
