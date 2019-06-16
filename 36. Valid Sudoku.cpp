@@ -68,3 +68,38 @@ public:
         return true;
     }
 };
+
+
+class Solution { //a little bit faster version
+public:
+    /*
+    Runtime: 20 ms, faster than 53.92% of C++ online submissions for Valid Sudoku.
+    Memory Usage: 11.8 MB, less than 42.03% of C++ online submissions for Valid Sudoku.
+    */
+    bool isValidSudoku(vector<vector<char>>& board) {
+        if (board.size() == 0)      return false;
+        vector<set<char>> parsedBlockChars(9,set<char>());
+        vector<set<char>> parsedRowChars(9,set<char>());
+        vector<set<char>> parsedColChars(9,set<char>());
+        for(int i=0;i<9;i++){ //row index
+            for(int j=0;j<9;j++){  //col index
+                if(board[i][j]=='.') continue;
+                //
+                if(parsedRowChars[i].find(board[i][j])!= parsedRowChars[i].end()) 
+                    return false; //num has appeared in row 'i',so reture false
+                else parsedRowChars[i].insert(board[i][j]); //num didn't appeared in row 'i',insert
+                
+                
+                if(parsedColChars[j].find(board[i][j])!= parsedColChars[j].end()) 
+                    return false;
+                else parsedColChars[j].insert(board[i][j]); //num didn't appeared in col 'j'
+                
+                int Gridindex=(i/3)*3+(j/3); //向下取整
+                if(parsedBlockChars[Gridindex].find(board[i][j])!= parsedBlockChars[Gridindex].end()) 
+                   return false;
+                else parsedBlockChars[Gridindex].insert(board[i][j]); //num didn't appeared in grid 'gridindex',mark it
+            }
+        }
+        return true;
+    }
+};
