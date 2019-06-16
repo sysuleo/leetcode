@@ -1,4 +1,4 @@
-#1. 分别进行初始化
+# 1. 分别进行初始化
 ```
 #include<vector>
 
@@ -6,15 +6,15 @@ using namespace std;
 
 int main()
 {
-    vector<vector<int>> vec;
-    vec.resize(10);
+    vector<vector<bool>> vec;
+    vec.resize(10);  //调整容器的长度大小，使其能容纳n个元素。
     for (int i = 0; i < vec.size(); i++) vec[i].resize(10);
     vec[0][0] = 0;
     return 0;
 }
 ```
  
-#2. 采用构造函数
+# 2. 采用构造函数
 ```
 #include<vector>
 
