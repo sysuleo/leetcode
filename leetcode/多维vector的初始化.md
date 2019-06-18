@@ -29,4 +29,7 @@ int main()
 }
 ```
 
+Char 30: error: expected identifier before numeric constant vector<vector<bool>> row(9,vector<bool>(10,false));
+    https://stackoverflow.com/questions/11490988/c-compile-time-error-expected-identifier-before-numeric-constant
+
 一维vector初始化：https://blog.csdn.net/yjunyu/article/details/77728410
